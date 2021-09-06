@@ -83,17 +83,17 @@ const vm = new Vue({
             this.mensagemAlerta = mensagem;
             this.alertaAtivo = true;
         },
-        // router() {
-        //     const hash = document.location.hash;
-        //     if (hash)
-        //         this.fetchProduto(hash.replace("#", ""));
-        // }
+        router() {
+            const hash = document.location.hash;
+            if (hash)
+                this.fetchProduto(hash.replace("#", ""));
+        }
     },
     watch: {
         produto() {
-            // document.title = this.produto.nome || "Techno";
-            // const hash = this.produto.id || "";
-            // history.pushState(null, null, `#${hash}`);
+            document.title = this.produto.nome || "Techno";
+            const hash = this.produto.id || "";
+            history.pushState(null, null, `#${hash}`);
             if (this.produto) {
                 this.compararEstoque();
             }
